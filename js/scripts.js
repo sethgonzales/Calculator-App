@@ -1,43 +1,44 @@
 // Business Logic
 function add(num1, num2) {
-    return num1 + num2;
-  }
-  
-  function subtract(num1, num2) {
-    return num1 - num2;
-  }
-  
-  function multiply(num1, num2) {
-    return num1 * num2;
-  }
-  
-  function divide(num1, num2) {
-    return num1 / num2;
-  }
-  
-  // User Interface Logic
-  function handleCalculation(event) {
-    event.preventDefault();
-    // the code to get and process form values will go here!
-    const number1 = parseInt(document.querySelector("input#input1").value);
-    const number2 = parseInt(document.querySelector("input#input2").value);
-    const operator = document.querySelector("input[name='operator']:checked").value;
+  return num1 + num2;
+}
 
-    let result;
-    if (operator === "add") {
-      result = add(number1, number2);
-    } else if (operator === "subtract") {
-      result = subtract(number1, number2);
-    } else if (operator === "multiply") {
-      result = multiply(number1, number2);
-    } else if (operator === "divide") {
-      result = divide(number1, number2);
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+function divide(num1, num2) {
+  return num1 / num2;
+}
+
+
+
+
+  // User Interface Logic
+  function handleCalc(event) {
+    event.preventDefault();
+    const num1 = parseInt(document.getElementById("num1Input").value);
+    const num2 = parseInt(document.getElementById("num2Input").value);
+    const operator = document.getElementById("operator").value;
+
+    let calculation;
+    if (operator === "Add") {
+      calculation = add(num1, num2);
+    } else if (operator === "Subtract") {
+      calculation = subtract(num1, num2);
+    } else if (operator === "Multiply") {
+      calculation = multiply(num1, num2);
+    } else if (operator === "Divide") {
+      calculation = divide(num1, num2);
     }
 
-    document.getElementById("output").innerText = result.toString();
-}
-  
-  window.addEventListener("load", function() {
-    const form = document.getElementById("calculator");
-    form.addEventListener("submit", handleCalculation);
-  });
+    document.getElementById("output").innerText = calculation;
+  }
+
+window.addEventListener("load", function () {
+  document.getElementById("calc-form").addEventListener("submit", handleCalc);
+});

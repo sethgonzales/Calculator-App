@@ -1,39 +1,36 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
+
 <head>
-  <title>Calculator</title>
-  <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script src="js/scripts.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script src="js/scripts.js"></script>
+    <title>Calculator</title>
 </head>
+
 <body>
-  <h1>Calculator</h1>
-  <form id="calculator">
-    <label for="input1">1st number:</label>
-    <input id="input1" type="text">
-    <label for="input2">2nd number:</label>
-    <input id="input2" type="text">
+<h1>
+    Calculator!
+</h1>
+<form id="calc-form"> 
+    <label for="num1Input">First Number</label>
+    <input id="num1Input" type="text" name="num1Input">
+    <label for="num2Input">Second Number</label>
+    <input id="num2Input" type="text" name="num2Input">
+    </ br>
+    <select id="operator">
+        <option>Add</option>
+        <option>Subtract</option>
+        <option>Multiply</option>
+        <option>Divide</option>
+    </select>
+    <button type="submit">Calculate!</button>
+</form>
 
-    <label>
-      <input type="radio" name="operator" value="add">
-      add
-    </label>
-    <label>
-      <input type="radio" name="operator" value="subtract">
-      subtract
-    </label>
-    <label>
-      <input type="radio" name="operator" value="multiply">
-      multiply
-    </label>
-    <label>
-      <input type="radio" name="operator" value="divide">
-      divide
-    </label>
+<h2>Calculated Results: </h2>
+<p id="output"></p>
 
-    <button type="submit" class="btn">Go!</button>
-  </form>
-
-  <h2>Results</h2>
-  <p id="output"></p>
 </body>
+
 </html>
